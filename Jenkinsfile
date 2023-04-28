@@ -14,7 +14,7 @@ pipeline {
                sh "mvn package"
             }
         }
-        stage("build war") {
+        stage("deploy") {
             steps {
                sshagent(['deploy_user']) {
                 sh "scp ssh -o StrictHostKeyChecking=no target/cloudbots_warproj.war ec2-user@18.191.233.8:/opt/tomcat/webapps"
