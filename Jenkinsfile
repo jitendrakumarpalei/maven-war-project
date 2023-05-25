@@ -30,6 +30,7 @@ pipeline {
             steps {
                 script {
                     echo "deploying the app"
+                    sh 'docker run -d -p 8080:8080 chinmayapradhan/tomcat-app:latest'
                 }
             }
         }
